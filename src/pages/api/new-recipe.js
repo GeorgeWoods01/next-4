@@ -1,11 +1,12 @@
 import { MongoClient } from "mongodb";
 
+
 async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
 
     const client = await MongoClient.connect(
-      "put mongo here!"
+      process.env.API_KEY
     );
     const db = client.db();
     const recipesCollection = db.collection("recipes");
