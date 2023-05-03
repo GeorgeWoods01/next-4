@@ -1,5 +1,6 @@
 
 import classes from './RecipeDetails.module.css'
+import Image from 'next/image';
 
 function RecipeDetails(props) {
   return (
@@ -9,7 +10,7 @@ function RecipeDetails(props) {
         alt="recipe"
       />
       <h1>{props.title}</h1>
-      <h3>{props.cusine}</h3>
+      <h3>{props.cuisine}</h3>
       <p>{props.description}</p>
     </section>
   );
