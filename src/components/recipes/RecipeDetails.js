@@ -9,6 +9,7 @@ function RecipeDetails(props) {
         alt="recipe"
       />
       <h1>{props.title}</h1>
+      <h3>{props.cusine}</h3>
       <p>{props.description}</p>
     </section>
   );

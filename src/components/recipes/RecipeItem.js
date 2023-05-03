@@ -10,7 +10,7 @@ function RecipeItem(props) {
       method: "DELETE",
     });
     if (response.ok) {
-      router.push("/recipes");
+      router.push("/");
     }
   };
 
@@ -21,12 +21,13 @@ function RecipeItem(props) {
           <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
-          <h3>{props.title}</h3>
+          <h1>{props.title}</h1>
+          <h3>{props.cuisine}</h3>
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
           <button>Show Details</button>
-          <button onClick={() => deleteHandler(id)}>Delete recipe</button>
+          <button onClick={deleteHandler}>Delete recipe</button>
         </div>
       </Card>
     </li>
