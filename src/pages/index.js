@@ -5,7 +5,7 @@ import Head from "next/head";
 
 
 export default function Home(props) {
-  return (
+ return (
    <RecipeList recipes={props.recipes} />
   );
 }
@@ -26,9 +26,10 @@ export async function getStaticProps() {
       recipes: recipes.map((recipe) => ({
         title: recipe.title,
         image: recipe.image,
+        cuisine: recipe.cuisine,
         description: recipe.description,
         id: recipe._id.toString(),
-      })), //now meetups from mongoDB, need to map data and convert the weird mongodb ID.
+      })),
     },
     revalidate: 10,
   };

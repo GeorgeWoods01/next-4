@@ -3,23 +3,27 @@ import { MongoClient, ObjectId } from "mongodb";
 import { Fragment } from "react";
 import Head from "next/head";
 
+
 function RecipeDetailsPage(props) {
   return (
     <Fragment>
       <Head>
         <title>{props.recipeData.title}</title>
       </Head>
-      <RecipeDetails
-        image={props.recipeData.image}
-        title={props.recipeData.title}
-        description={props.recipeData.description}
-      />
+    <RecipeDetails
+      image={props.recipeData.image}
+      title={props.recipeData.title}
+      cuisine={props.recipeData.cuisine}
+      description={props.Data.description}
+    />
     </Fragment>
   );
 }
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(process.env.API_KEY);
+  const client = await MongoClient.connect(
+    process.env.API_KEY
+  );
   const db = client.db();
   const recipesCollection = db.collection("recipes");
 
@@ -33,9 +37,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
+
+
   const recipeId = context.params.recipeId;
 
-  const client = await MongoClient.connect(process.env.API_KEY);
+  const client = await MongoClient.connect(
+    process.env.API_KEY
+  );
   const db = client.db();
   const recipesCollection = db.collection("recipes");
 
