@@ -18,7 +18,10 @@ function RecipeItem(props) {
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
-          <img src={props.image} alt={props.title} />
+          <img
+            src={props.image}
+            alt={props.title}
+          />
         </div>
         <div className={classes.content}>
           <h1>{props.title}</h1>

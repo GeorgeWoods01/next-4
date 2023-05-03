@@ -14,7 +14,7 @@ function RecipeDetailsPage(props) {
       image={props.recipeData.image}
       title={props.recipeData.title}
       cuisine={props.recipeData.cuisine}
-      description={props.Data.description}
+      description={props.recipeData.description}
     />
     </Fragment>
   );
@@ -60,6 +60,7 @@ export async function getStaticProps(context) {
         title: selectedRecipe.title,
         image: selectedRecipe.image,
         description: selectedRecipe.description,
+        cuisine: selectedRecipe.cuisine,
       },
     },
   };
