@@ -8,6 +8,7 @@ function NewRecipe(props) {
   const imageInputRef = useRef();
   const descriptionInputRef = useRef();
   const cuisineInputRef = useRef();
+  const ingredientsInputRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
@@ -16,12 +17,14 @@ function NewRecipe(props) {
     const enteredImage = imageInputRef.current.value;
     const enteredDescription = descriptionInputRef.current.value;
     const enteredCuisine = cuisineInputRef.current.value;
+    const enteredIngredients = ingredientsInputRef.current.value;
 
     const recipeData = {
       title: enteredTitle,
       image: enteredImage,
       description: enteredDescription,
       cuisine: enteredCuisine,
+      ingredients: enteredIngredients,
     };
 
     props.onAddRecipe(recipeData);
@@ -49,6 +52,15 @@ function NewRecipe(props) {
             required
             rows='5'
             ref={descriptionInputRef}
+          ></textarea>
+        </div>
+        <div className={classes.control}>
+          <label htmlFor='description'>Ingredients</label>
+          <textarea
+            id='ingredients'
+            required
+            rows='5'
+            ref={ingredientsInputRef}
           ></textarea>
         </div>
         <div className={classes.actions}>

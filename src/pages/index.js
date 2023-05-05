@@ -2,6 +2,7 @@ import RecipeList from "../components/recipes/RecipeList";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home(props) {
   const [query, setQuery] = useState("");
@@ -19,11 +20,11 @@ export default function Home(props) {
         placeholder="Search recipes"
         onChange={(e) => setQuery(e.target.value)}
         style={{
-          borderColor: "pink",
+          borderColor: "#be2596",
           borderRadius: "6px",
-          boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
+          // boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
           fontSize: "1.5rem",
-          color:"black"
+          color: "#2596be",
         }}
       />
       <RecipeList recipes={fileteredRecipes} />
@@ -46,7 +47,6 @@ export async function getStaticProps() {
         title: recipe.title,
         image: recipe.image,
         cuisine: recipe.cuisine,
-        description: recipe.description,
         id: recipe._id.toString(),
       })),
     },
