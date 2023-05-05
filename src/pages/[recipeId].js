@@ -1,8 +1,7 @@
 import RecipeDetails from "../components/recipes/RecipeDetails";
 import { MongoClient, ObjectId } from "mongodb";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import Head from "next/head";
-
 
 function RecipeDetailsPage(props) {
   return (
@@ -10,20 +9,19 @@ function RecipeDetailsPage(props) {
       <Head>
         <title>{props.recipeData.title}</title>
       </Head>
-    <RecipeDetails
-      image={props.recipeData.image}
-      title={props.recipeData.title}
-      cuisine={props.recipeData.cuisine}
-      description={props.recipeData.description}
-    />
+      <RecipeDetails
+        image={props.recipeData.image}
+        title={props.recipeData.title}
+        cuisine={props.recipeData.cuisine}
+        description={props.recipeData.description}
+        ingredients={props.recipeData.ingredients}
+      />
     </Fragment>
   );
 }
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(
-    process.env.API_KEY
-  );
+  const client = await MongoClient.connect(process.env.API_KEY);
   const db = client.db();
   const recipesCollection = db.collection("recipes");
 
@@ -37,14 +35,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-
-
   const recipeId = context.params.recipeId;
-  console.log(recipeId)
+  console.log(recipeId);
 
-  const client = await MongoClient.connect(
-    process.env.API_KEY
-  );
+  const client = await MongoClient.connect(process.env.API_KEY);
   const db = client.db();
   const recipesCollection = db.collection("recipes");
 
@@ -62,6 +56,7 @@ export async function getStaticProps(context) {
         title: selectedRecipe.title,
         cuisine: selectedRecipe.cuisine,
         description: selectedRecipe.description,
+        ingredients: selectedRecipe.ingredients,
       },
     },
   };

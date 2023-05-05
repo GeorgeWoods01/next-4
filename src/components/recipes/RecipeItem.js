@@ -29,7 +29,6 @@ function RecipeItem(props) {
         <div className={classes.content}>
           <h1>{props.title}</h1>
           <h3>{props.cuisine}</h3>
-          <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>

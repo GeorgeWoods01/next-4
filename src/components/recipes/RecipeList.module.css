@@ -3,3 +3,14 @@
   margin: 0;
   padding: 0;
 }
+
+.link {
+  color: #2596be;
+  text-decoration: none;
+  border-style: groove;
+  border-color: #be2596;
+  margin-left: 260px;
+  padding: 3px;
+  border-radius:6px;
+  font-size: large;
+}
