@@ -16,6 +16,10 @@ function RecipeItem(props) {
   function showDetailsHandler() {
     router.push('/' + props.id)
   }
+  function editRecipeHandler() {
+    router.push(`/edit-recipe/${props.id}`);
+  }
+
 
   return (
     <li className={classes.item}>
@@ -33,6 +37,7 @@ function RecipeItem(props) {
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
           <button onClick={deleteHandler}>Delete recipe</button>
+          <button onClick={editRecipeHandler}>Edit Recipe</button>
         </div>
       </Card>
     </li>
