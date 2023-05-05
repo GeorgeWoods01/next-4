@@ -13,6 +13,9 @@ function RecipeItem(props) {
       router.push("/");
     }
   };
+  function showDetailsHandler() {
+    router.push('/' + props.id)
+  }
 
   return (
     <li className={classes.item}>
@@ -29,7 +32,7 @@ function RecipeItem(props) {
           <p>{props.description}</p>
         </div>
         <div className={classes.actions}>
-          <button>Show Details</button>
+          <button onClick={showDetailsHandler}>Show Details</button>
           <button onClick={deleteHandler}>Delete recipe</button>
         </div>
       </Card>

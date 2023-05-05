@@ -40,6 +40,7 @@ export async function getStaticProps(context) {
 
 
   const recipeId = context.params.recipeId;
+  console.log(recipeId)
 
   const client = await MongoClient.connect(
     process.env.API_KEY
@@ -57,10 +58,10 @@ export async function getStaticProps(context) {
     props: {
       recipeData: {
         id: selectedRecipe._id.toString(),
-        title: selectedRecipe.title,
         image: selectedRecipe.image,
-        description: selectedRecipe.description,
+        title: selectedRecipe.title,
         cuisine: selectedRecipe.cuisine,
+        description: selectedRecipe.description,
       },
     },
   };
