@@ -17,6 +17,8 @@ function RecipeItem(props) {
     router.push('/' + props.id)
   }
   function editRecipeHandler() {
+    const url = `/edit-recipe/${props.id}`
+    console.log(url)
     router.push(`/edit-recipe/${props.id}`);
   }
 
@@ -38,6 +40,7 @@ function RecipeItem(props) {
           <button onClick={showDetailsHandler}>Show Details</button>
           <button onClick={deleteHandler}>Delete recipe</button>
           <button onClick={editRecipeHandler}>Edit Recipe</button>
+          {/* <a href='`/edit-recipe/${props.recipe.id}`'>Edit recipe</a> */}
         </div>
       </Card>
     </li>
