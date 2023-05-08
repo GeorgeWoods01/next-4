@@ -1,4 +1,4 @@
-import EditRecipe from "../components/recipes/EditRecipe";
+import EditRecipe from "/home/george/code/GeorgeWoods01/next-4/src/components/recipes/EditRecipe.js"
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ function EditRecipePage(props) {
   async function editRecipeHandler(recipeData) {
     setIsLoading(true);
 
-    const response = await fetch(`/api/edit-recipe/${props.recipe.id}`, {
+    const response = await fetch(`/api/edit-recipe/${props.id}`, {
       method: "PUT",
       body: JSON.stringify(recipeData),
       headers: {
@@ -32,12 +32,13 @@ function EditRecipePage(props) {
 export async function getServerSideProps(context) {
   const { MongoClient, ObjectId } = require("mongodb");
 
+
   const client = await MongoClient.connect(process.env.API_KEY);
   const db = client.db();
   const recipesCollection = db.collection("recipes");
 
   const recipe = await recipesCollection.findOne({
-    _id: ObjectId(context.params.recipeId),
+    _id: new ObjectId(context.params.recipeId),
   });
 
   client.close();
