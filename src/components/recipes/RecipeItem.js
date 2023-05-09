@@ -17,8 +17,6 @@ function RecipeItem(props) {
     router.push('/' + props.id)
   }
   function editRecipeHandler() {
-    const url = `/edit-recipe/${props.id}`
-    console.log(url)
     router.push(`/edit-recipe/${props.id}`);
   }
 

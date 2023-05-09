@@ -1,4 +1,4 @@
-import EditRecipe from "/home/george/code/GeorgeWoods01/next-4/src/components/recipes/EditRecipe.js"
+import EditRecipe from "src/components/recipes/EditRecipe.js"
 import { useRouter } from "next/router";
 import { useState } from "react";
 
