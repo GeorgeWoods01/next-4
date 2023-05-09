@@ -1,10 +1,12 @@
 
 import classes from './RecipeDetails.module.css'
 import Image from 'next/image';
+import Link from 'next/link';
 
 function RecipeDetails(props) {
   return (
     <section className={classes.detail}>
+      <Link href='/'>Back to recipes</Link>
       <img
         src={props.image}
         alt="recipe"
