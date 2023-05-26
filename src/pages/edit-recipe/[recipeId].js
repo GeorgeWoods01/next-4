@@ -9,8 +9,8 @@ function EditRecipePage(props) {
   async function editRecipeHandler(recipeData) {
     setIsLoading(true);
 
-    const response = await fetch(`/api/edit-recipe/${props.id}`, {
-      method: "PUT",
+    const response = await fetch(`/api/edit-recipe/${props.recipe.id}`, {
+      method: "POST",
       body: JSON.stringify(recipeData),
       headers: {
         "Content-Type": "application/json",
