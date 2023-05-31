@@ -1,3 +1,5 @@
+
+
 .item {
   margin: 1rem 0;
 }
@@ -44,4 +46,9 @@
 .actions button:hover,
 .actions button:active {
   background-color: #ffe2ed;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
 }
