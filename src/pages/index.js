@@ -15,6 +15,7 @@ export default function Home(props) {
   }, [query, props.recipes]);
   return (
     <>
+      <Link href="/cuisine/Korean">Korean Recipes</Link>
       <input
         type="text"
         placeholder="Search recipes"
@@ -22,7 +23,6 @@ export default function Home(props) {
         style={{
           borderColor: "#be2596",
           borderRadius: "6px",
-          // boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)",
           fontSize: "1.5rem",
           color: "#2596be",
         }}

@@ -7,7 +7,7 @@ function RecipeList(props) {
     <>
     <Link className={classes.link} href="/cuisines">Cuisines</Link>
     <ul className={classes.list}>
-      {props.recipes.map((recipe) => (
+      {props.recipes?.map((recipe) => (
         <RecipeItem
           key={recipe.id}
           id={recipe.id}
