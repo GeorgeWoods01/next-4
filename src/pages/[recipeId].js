@@ -2,6 +2,7 @@ import RecipeDetails from "../components/recipes/RecipeDetails";
 import { MongoClient, ObjectId } from "mongodb";
 import { Fragment, useState } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 function RecipeDetailsPage(props) {
   return (
