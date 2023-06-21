@@ -33,10 +33,6 @@ function RecipeItem(props) {
         </div>
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
-
-
-
-          <button onClick={editRecipeHandler}>Edit Recipe</button>
         </div>
         <div className={classes.delete}>
           <AiFillDelete onClick={deleteHandler} />

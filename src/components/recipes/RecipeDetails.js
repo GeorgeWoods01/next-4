@@ -6,12 +6,12 @@ import { useRouter } from "next/router";
 import React from 'react';
 
 
+function RecipeDetails(props) {
+  const router = useRouter();
 
 function editRecipeHandler() {
   router.push(`/edit-recipe/${props.id}`);
 }
-
-function RecipeDetails(props) {
   return (
     <section className={classes.detail}>
       <img
