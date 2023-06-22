@@ -5,7 +5,6 @@ import Link from "next/link";
 function RecipeList(props) {
   return (
     <>
-    <Link className={classes.link} href="/cuisines">Cuisines</Link>
     <ul className={classes.list}>
       {props.recipes?.map((recipe) => (
         <RecipeItem
