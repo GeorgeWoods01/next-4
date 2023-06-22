@@ -1,24 +1,25 @@
 import RecipeList from "../components/recipes/RecipeList";
 import { MongoClient } from "mongodb";
-import Head from "next/head";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 
 export default function Home(props) {
   const [query, setQuery] = useState("");
-  const [fileteredRecipes, setFilteredRecipes] = useState(props.recipes);
+  const [filteredRecipes, setFilteredRecipes] = useState(props.recipes);
+
   useEffect(() => {
-    const filtered = props.recipes.filter((recipe) =>
-      recipe.title.toLowerCase().includes(query.toLowerCase())
+    const filtered = props.recipes.filter(
+      (recipe) =>
+        recipe.title.toLowerCase().includes(query.toLowerCase()) ||
+        recipe.cuisine.toLowerCase().includes(query.toLowerCase())
     );
     setFilteredRecipes(filtered);
   }, [query, props.recipes]);
+
   return (
     <>
-      <Link href="/cuisine/Korean">Korean Recipes</Link>
       <input
         type="text"
-        placeholder="Search recipes"
+        placeholder="Search recipes or cuisines"
         onChange={(e) => setQuery(e.target.value)}
         style={{
           borderColor: "#be2596",
@@ -27,7 +28,7 @@ export default function Home(props) {
           color: "#2596be",
         }}
       />
-      <RecipeList recipes={fileteredRecipes} />
+      <RecipeList recipes={filteredRecipes} />
     </>
   );
 }
@@ -35,9 +36,9 @@ export default function Home(props) {
 export async function getStaticProps() {
   const client = await MongoClient.connect(process.env.API_KEY);
   const db = client.db();
-  const recipesCollection = db.collection("recipes"); //connect to db
+  const recipesCollection = db.collection("recipes");
 
-  const recipes = await recipesCollection.find().toArray(); //find all documents in collection and make an array.
+  const recipes = await recipesCollection.find().toArray();
 
   client.close();
 
