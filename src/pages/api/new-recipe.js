@@ -6,7 +6,7 @@ async function handler(req, res) {
     const data = req.body;
 
     const client = await MongoClient.connect(
-      process.env.API_KEY
+      process.env.MONGODB_URI
     );
     const db = client.db();
     const recipesCollection = db.collection("recipes");

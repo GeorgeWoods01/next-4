@@ -22,7 +22,7 @@ function RecipeDetailsPage(props) {
 }
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect(process.env.API_KEY);
+  const client = await MongoClient.connect(process.env.MONGODB_URI);
   const db = client.db();
   const recipesCollection = db.collection("recipes");
 
