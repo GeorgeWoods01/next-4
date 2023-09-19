@@ -1,75 +1,20 @@
-/*
 
-.item {
-  margin: 1rem 0;
-}
-
-.image {
-  width: 100%;
-  height: 20rem;
-  overflow: hidden;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
-}
-
-.image img {
-  width: 100%;
-  object-fit: cover;
-}
-
-
-.content {
-  text-align: center;
-  padding: 1rem;
-}
-
-.content h3 {
-  font-size: 1.25rem;
-  color: #2c292b;
-}
-
-.actions {
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.actions button {
-  font: inherit;
-  cursor: pointer;
-  color: #2596be;
-  border: 1px solid #2596be;
-  background-color: transparent;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-}
-
-.actions button:hover,
-.actions button:active {
-  background-color: #ffe2ed;
-}
-
-.delete {
-  color: red;
-  cursor: pointer;
-} */
-
-/* Recipe item container */
 .item {
   margin: 1rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  width: calc(33.33% - 2rem); /* Adjust the width as needed for your layout */
+  width: calc(20% - 2rem);
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
 }
 
-/* Recipe item image */
+
 .image {
   width: 100%;
-  height: 10rem; /* Adjust the height as needed */
+  height: 10rem;
   overflow: hidden;
   border-radius: 6px 6px 0 0;
 }
@@ -80,19 +25,19 @@
   object-fit: cover;
 }
 
-/* Recipe item content */
+
 .content {
   text-align: center;
   padding: 1rem;
 }
 
 .content h3 {
-  font-size: 1rem; /* Adjust the font size as needed */
+  font-size: 1rem;
   color: #2c292b;
   margin: 0;
 }
 
-/* Recipe item actions */
+
 .actions {
   text-align: center;
   padding: 1rem;
@@ -104,7 +49,7 @@
   color: #2596be;
   border: 1px solid #2596be;
   background-color: transparent;
-  padding: 0.25rem 1rem; /* Adjust the padding as needed */
+  padding: 0.25rem 1rem;
   border-radius: 4px;
 }
 
