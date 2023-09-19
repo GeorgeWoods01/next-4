@@ -1,4 +1,4 @@
-
+/*
 
 .item {
   margin: 1rem 0;
@@ -40,6 +40,71 @@
   border: 1px solid #2596be;
   background-color: transparent;
   padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #ffe2ed;
+}
+
+.delete {
+  color: red;
+  cursor: pointer;
+} */
+
+/* Recipe item container */
+.item {
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 2rem); /* Adjust the width as needed for your layout */
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+/* Recipe item image */
+.image {
+  width: 100%;
+  height: 10rem; /* Adjust the height as needed */
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Recipe item content */
+.content {
+  text-align: center;
+  padding: 1rem;
+}
+
+.content h3 {
+  font-size: 1rem; /* Adjust the font size as needed */
+  color: #2c292b;
+  margin: 0;
+}
+
+/* Recipe item actions */
+.actions {
+  text-align: center;
+  padding: 1rem;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  color: #2596be;
+  border: 1px solid #2596be;
+  background-color: transparent;
+  padding: 0.25rem 1rem; /* Adjust the padding as needed */
   border-radius: 4px;
 }
 
