@@ -22,10 +22,16 @@ export default function Home(props) {
         placeholder="Search recipes or cuisines"
         onChange={(e) => setQuery(e.target.value)}
         style={{
-          borderColor: "#be2596",
+          border: "2px solid #2596be",
           borderRadius: "6px",
-          fontSize: "1.5rem",
+          fontSize: "1rem",
+          marginLeft: "1rem",
+          padding: "0.5rem 1rem",
           color: "#2596be",
+          width: "37.5%",
+          outline: "none",
+          boxShadow: "0 0 5px rgba(0, 0, 0, 0.1)",
+          transition: "border-color 0.3s ease-in-out",
         }}
       />
       <RecipeList recipes={filteredRecipes} />
