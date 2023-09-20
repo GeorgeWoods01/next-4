@@ -2,7 +2,7 @@ import classes from "./RecipeItem.module.css";
 import Card from "../ui/Card";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { AiFillDelete } from 'react-icons/ai'
+import { AiFillDelete } from "react-icons/ai";
 
 function RecipeItem(props) {
   const router = useRouter();
@@ -15,17 +15,14 @@ function RecipeItem(props) {
     }
   };
   function showDetailsHandler() {
-    router.push('/' + props.id)
+    router.push("/" + props.id);
   }
 
   return (
     <li className={classes.item}>
       <Card>
         <div className={classes.image}>
-          <img
-            src={props.image}
-            alt={props.title}
-          />
+          <img src={props.image} alt={props.title} />
         </div>
         <div className={classes.content}>
           <h1>{props.title}</h1>
@@ -34,9 +31,8 @@ function RecipeItem(props) {
         <div className={classes.actions}>
           <button onClick={showDetailsHandler}>Show Details</button>
         </div>
-        <div className={classes.delete}>
-          <AiFillDelete onClick={deleteHandler} />
-
+        <div className={classes.delete} onClick={deleteHandler}>
+          <AiFillDelete />
         </div>
       </Card>
     </li>

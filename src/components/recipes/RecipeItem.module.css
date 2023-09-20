@@ -62,4 +62,11 @@
 .delete {
   color: red;
   cursor: pointer;
+  opacity: 1; /* Initial opacity */
+  transition: opacity 0.8s ease-in-out; /* Smooth opacity transition */
+}
+
+.delete:hover {
+  color: #d32f2f; /* Darker red on hover */
+  opacity: 0.2; /* Slightly transparent on hover */
 }
