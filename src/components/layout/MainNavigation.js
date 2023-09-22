@@ -9,13 +9,13 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link href='/'>All Recipes</Link>
+            <Link href='/'>All <span style={{color: '#be2596'}}>R</span>ecipes</Link>
           </li>
           <li>
-            <Link href='/new-recipe'>Add New Recipe</Link>
+            <Link href='/new-recipe'>Add New <span style={{color: '#be2596'}}>R</span>ecipe</Link>
           </li>
           <li>
-            <Link href='/inspiration'>Give Me Inspiration!</Link>
+            <Link href='/inspiration'>Give Me <span style={{color: '#be2596'}}>I</span>nspiration!</Link>
           </li>
         </ul>
       </nav>
