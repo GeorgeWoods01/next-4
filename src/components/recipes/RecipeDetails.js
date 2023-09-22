@@ -9,9 +9,12 @@ import React from 'react';
 function RecipeDetails(props) {
   const router = useRouter();
 
-function editRecipeHandler() {
-  router.push(`/edit-recipe/${props.id}`);
-}
+  function editRecipeHandler() {
+    // const url = `/edit-recipe/${props.id}`
+    // console.log(url)
+    router.push(`/edit-recipe/${props.id}`);
+  }
+
   return (
     <section className={classes.detail}>
       <img
